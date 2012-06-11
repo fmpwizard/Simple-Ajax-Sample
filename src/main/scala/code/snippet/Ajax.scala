@@ -29,8 +29,7 @@ class HelloWorld extends Logger {
 
 
    def exec = "#tag_input" #> SHtml.onSubmit(str => {
-     val deleteButton= <button onclick={SHtml.ajaxCall(Str(str), removeTag _)._2.toJsCmd +"; return false;"}>X</button>.toString().replace("'","\\'")
-     println("\n\nsssssssdddf\n\n" + deleteButton)
+     val deleteButton= <a href="#" onclick={SHtml.ajaxCall(Str(str), removeTag _)._2.toJsCmd +"; return false;"}>X</a>.toString().replace("'","\\'")
      val node= xml.XML.loadString(
        deleteButton
      )
